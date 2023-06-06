@@ -1,10 +1,11 @@
 # Local .terraform directories
 **/.terraform/*
-
+**/.terraform.*
 # .tfstate files
 *.tfstate
 *.tfstate.*
-
+**/terraform/file
+**/terraform/test
 # Crash log files
 crash.log
 crash.*.log
@@ -32,3 +33,6 @@ override.tf.json
 # Ignore CLI configuration files
 .terraformrc
 terraform.rc
+
+#python environment
+env/
