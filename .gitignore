@@ -4,7 +4,6 @@
 # .tfstate files
 *.tfstate
 *.tfstate.*
-**/terraform/file
 **/terraform/test
 # Crash log files
 crash.log
@@ -36,3 +35,6 @@ terraform.rc
 
 #python environment
 env/
+
+# Keys
+*.pem
