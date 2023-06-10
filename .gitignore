@@ -38,3 +38,6 @@ env/
 
 # Keys
 *.pem
+
+#others
+create_ec2.py

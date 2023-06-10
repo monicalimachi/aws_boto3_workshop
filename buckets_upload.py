@@ -1,21 +1,9 @@
-import boto
-from boto.s3.key import Key
+import boto3
+from boto3 import client
 
-AWS_ACCESS_KEY_ID = ''
-AWS_SECRET_ACCESS_KEY = ''
-END_POINT = ''                          # eg. us-east-1
-S3_HOST = ''                            # eg. s3.us-east-1.amazonaws.com
-BUCKET_NAME = 'test'        
-FILENAME = 'upload.txt'                
-UPLOADED_FILENAME = 'dumps/upload.txt'
-# include folders in file path. If it doesn't exist, it will be created
+s3 = boto3.client('s3')
+filename = 'images/lp1.jpeg'                
+bucket_name = 's3-bucket-workshop-1001-pyday'
+des_filename= 'imagenes/lp1.jpeg'
 
-s3 = boto.s3.connect_to_region(END_POINT,
-                           aws_access_key_id=AWS_ACCESS_KEY_ID,
-                           aws_secret_access_key=AWS_SECRET_ACCESS_KEY,
-                           host=S3_HOST)
-
-bucket = s3.get_bucket(BUCKET_NAME)
-k = Key(bucket)
-k.key = UPLOADED_FILENAME
-k.set_contents_from_filename(FILENAME)
+s3.upload_file(filename, bucket_name, des_filename)
