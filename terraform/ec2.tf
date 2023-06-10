@@ -10,10 +10,13 @@ resource "aws_instance" "ec2_public" {
   depends_on                  = [local_file.ssh_key]
   iam_instance_profile        = aws_iam_instance_profile.instance_profile.name
 
+  user_data = file("userdata.tpl")
+
   lifecycle {
     create_before_destroy = true
   }
   tags = {
-    "Name" = "EC2-Public-Workshop"
+    "Name"        = "EC2-Public-Workshop"
+    "Environment" = "production"
   }
 }

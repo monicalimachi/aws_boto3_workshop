@@ -3,7 +3,8 @@
 resource "aws_vpc" "vpc" {
   cidr_block           = var.vpc-cidr
   instance_tenancy     = "default"
-  enable_dns_hostnames = false
+  enable_dns_hostnames = true
+  enable_dns_support   = true
 
   tags = {
     Name = "vpc_workshop"
@@ -50,18 +51,6 @@ resource "aws_route_table" "public-route-table" {
 resource "aws_route_table_association" "public-subnet-1-route-table-association" {
   subnet_id      = aws_subnet.public-subnet-1.id
   route_table_id = aws_route_table.public-route-table.id
-}
-
-# Create Private Subnet 1
-# terraform aws create subnet
-resource "aws_subnet" "private-subnet-1" {
-  vpc_id                  = aws_vpc.vpc.id
-  cidr_block              = var.private_pubnet_1
-  availability_zone       = "us-east-1a"
-  map_public_ip_on_launch = false
-  tags = {
-    Name = "private-subnet-1-workshop"
-  }
 }
 
 # terraform aws create security group
