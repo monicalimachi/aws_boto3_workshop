@@ -108,5 +108,7 @@ Workshop for boto3 and aws
   pip install -r requirements.txt
   pip list
   ```
-- En el repositorio se encontrara los comandos para comenzar a listar, bajar o subir objetos a S3, modificar el codifo para que se utilice el bucket creado.
+- En el repositorio se encontrara los comandos para comenzar a listar, bajar o subir objetos a S3, modificar el codigo para que se utilice el bucket creado.
+  
+- Adjunto Diapositivas: [Uso de Boto3 el SDK de AWS_.pdf](https://github.com/monicalimachi/aws_boto3_workshop/files/11778028/Uso.de.Boto3.el.SDK.de.AWS_.pdf)
 
